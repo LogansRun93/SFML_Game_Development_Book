@@ -145,7 +145,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="SFMLTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Eagle.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
