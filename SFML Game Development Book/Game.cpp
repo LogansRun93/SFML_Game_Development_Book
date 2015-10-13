@@ -11,7 +11,7 @@ Game::Game()
 {
 	// Set the intial properties of the player and window.
 
-	if (!mTexture.loadFromFile("C:/Visual Studio 2013/Projects/SFML Game Development Book/SFML Game Development Book/SFML Game Development Book/Eagle.png"))
+	if (!mTexture.loadFromFile("Eagle.png"))
 	{
 		// Error loading file
 	}
