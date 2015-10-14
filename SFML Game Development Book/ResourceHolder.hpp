@@ -10,9 +10,11 @@ class ResourceHolder
 
 public:
 	void load(Identifier id, const std::string& filename);
+	sf::Resource& get(Identifier id);
 
 private:
-	std::map<Textures::ID, std::unique_ptr<sf::Texture>> mTextureMap;
+	std::map<Textures::ID, std::unique_ptr<sf::Texture>> mResourceMap;
+	
 };
 
 #include "ResourceHolder.inl"
