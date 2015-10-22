@@ -1,4 +1,5 @@
 #include "Entity.hpp"
+#include <SFML/Graphics/Sprite.hpp>
 
 class Aircraft : public Entity
 {
@@ -14,6 +15,9 @@ public:
 	explicit Aircraft(Type type);
 
 private:
-	Type mType;
+	virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
 
+private:
+	Type mType;
+	sf::Sprite mSprite;
 };

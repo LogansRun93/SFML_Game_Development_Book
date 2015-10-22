@@ -27,3 +27,23 @@ SceneNode::Ptr SceneNode::detachChild(const SceneNode& node)
 	return result;
 }
 
+void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	// Get the transform to apply and combine it with the current tranform to get the absolute transform
+	states.transform *= getTransform();
+	
+	// Draw the transformed node
+	drawCurrent(target, states);
+
+	// Loop through the children of this node and redraw them since they will transform base on this node.
+	drawChildren(target, states);
+}
+
+void SceneNode::drawChildren(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	for (const Ptr& child : mChildren) // C++ for each loop
+	{
+		// Dereference the current child pointer to get the child object. Then call the draw method of the object
+		child->draw(target, states);
+	}
+}
